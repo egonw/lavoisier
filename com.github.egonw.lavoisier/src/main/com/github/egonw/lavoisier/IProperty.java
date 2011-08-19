@@ -28,6 +28,13 @@ package com.github.egonw.lavoisier;
 public interface IProperty {
 
     /**
+     * Returns the value of this property.
+     * 
+     * @return the value for this property.
+     */
+    public String getValue();
+
+    /**
      * Returns the type of this property.
      * 
      * @return the {@link IPropertyType} for this property.

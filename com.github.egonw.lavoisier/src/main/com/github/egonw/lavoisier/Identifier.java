@@ -18,18 +18,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.egonw.lavoisier.identifiers;
+package com.github.egonw.lavoisier;
 
-import com.github.egonw.lavoisier.IIdentifierType;
+/**
+ * Implementation of an identifier holder.
+ *
+ * @author egonw
+ */
+public class Identifier implements IIdentifier {
 
-public class StandardInChI implements IIdentifierType {
+    private IIdentifierType type;
+    private String value;
 
-    private static IIdentifierType instance;
-
-    private StandardInChI() {}
-
-    public static IIdentifierType getInstance() {
-        if (instance == null) instance = new StandardInChI(); 
-        return instance;
+    public Identifier(IIdentifierType type, String value) {
+        this.value = value;
     }
+
+    @Override
+    public String getValue() {
+        return this.value;
+    }
+
+    @Override
+    public IIdentifierType getType() {
+        return this.type;
+    }
+
 }

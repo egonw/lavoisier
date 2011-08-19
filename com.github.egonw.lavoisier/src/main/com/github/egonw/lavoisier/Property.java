@@ -18,18 +18,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.egonw.lavoisier.identifiers;
+package com.github.egonw.lavoisier;
 
-import com.github.egonw.lavoisier.IIdentifierType;
+/**
+ * Implementation of an identifier holder.
+ *
+ * @author egonw
+ */
+public class Property implements IProperty {
 
-public class StandardInChI implements IIdentifierType {
+    private IPropertyType type;
+    private String value;
 
-    private static IIdentifierType instance;
-
-    private StandardInChI() {}
-
-    public static IIdentifierType getInstance() {
-        if (instance == null) instance = new StandardInChI(); 
-        return instance;
+    public Property(IPropertyType type, String value) {
+        if (type == null) throw new IllegalArgumentException("Type was null");
+        if (value == null) throw new IllegalArgumentException("Value was null");
+        this.type = type;
+        this.value = value;
     }
+
+    @Override
+    public String getValue() {
+        return this.value;
+    }
+
+    @Override
+    public IPropertyType getType() {
+        return this.type;
+    }
+
 }

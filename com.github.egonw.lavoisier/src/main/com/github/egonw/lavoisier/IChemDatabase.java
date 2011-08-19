@@ -45,11 +45,20 @@ public interface IChemDatabase {
 
     /**
      * Returns the value of the given property for the molecule corresponding to the
-     * molecule.
+     * identifier.
      * 
      * @param  identifier {@link IIdentifier} associated with the molecule
-     * @param  property   {@link IPropertyType} of the property to return
+     * @param  property   {@link IProperty} of the property to return
      * @return the IProperty for the identified molecule.
      */
     public IProperty getProperty(IIdentifier identifier, IPropertyType property);
+
+    /**
+     * Adds a property value for the molecule corresponding to the
+     * identifier.
+     * 
+     * @param  identifier {@link IIdentifier} associated with the molecule
+     * @param  property   {@link IProperty} of the property to return
+     */
+    public void addProperty(IIdentifier identifier, IProperty property);
 }

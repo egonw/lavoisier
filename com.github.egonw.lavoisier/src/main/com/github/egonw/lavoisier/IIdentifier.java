@@ -28,9 +28,16 @@ package com.github.egonw.lavoisier;
 public interface IIdentifier {
 
     /**
+     * Returns the value of this identifier.
+     * 
+     * @return the value for this identifier.
+     */
+    public String getValue();
+
+    /**
      * Returns the type of this identifier.
      * 
-     * @return the IIdentifierType for this identifier.
+     * @return the type for this identifier.
      */
     public IIdentifierType getType();
 

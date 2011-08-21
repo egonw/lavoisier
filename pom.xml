@@ -18,6 +18,19 @@
   	<module>lavoisier-opentox</module>
   	<module>lavoisier-ambit</module>
   </modules>
+<distributionManagement>
+   <!-- snapshots versions x.y.z-SNAPSHOTS go here on mvn deploy -->
+    <snapshotRepository>
+	<id>ambit-plovdiv-snapshots</id>
+  	<url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+   <!-- stable versions x.y.z go here on mvn deploy -->
+    <repository>
+        <id>ambit-plovdiv-releases</id>
+        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+    </repository>
+ 	
+  </distributionManagement>
  <build>
   	<pluginManagement>
   		<plugins>

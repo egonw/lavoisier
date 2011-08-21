@@ -1,0 +1,232 @@
+The top multi-module maven project is of type pom. There are 4 modules of type jar
+
+lavoisier-interfaces
+lavoisier-brain
+lavoisier-opentox
+lavoisier-ambit
+
+Build the top level project by 
+
+$mvn package
+
+This will compile all 4 modules, into 4 jars, to be found in the relevant lavoisier-*/target directories. 
+
+The build will fail, if there are failing tests in any of the submodules. Use -DskipTests to skip tests, if necessary. ( http://maven.apache.org/plugins/maven-surefire-plugin/examples/skipping-test.html )
+
+$mvn clean package -DskipTests
+
+{PROJECTHOME}/lavoisier>mvn clean package -DskipTests
+[INFO] Scanning for projects...
+[INFO] Reactor build order:
+[INFO]   Lavoisier
+[INFO]   lavoisier-interfaces
+[INFO]   lavoisier-brain
+[INFO]   lavoisier-opentox
+[INFO]   lavoisier-ambit
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Lavoisier
+[INFO]    task-segment: [clean, package]
+[INFO] ------------------------------------------------------------------------
+[INFO] [clean:clean {execution: default-clean}]
+[INFO] [site:attach-descriptor {execution: default-attach-descriptor}]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building lavoisier-interfaces
+[INFO]    task-segment: [clean, package]
+[INFO] ------------------------------------------------------------------------
+[INFO] [clean:clean {execution: default-clean}]
+[INFO] Deleting directory {PROJECTHOME}/lavoisier/lavoisier-interfaces/target
+[INFO] [resources:resources {execution: default-resources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory {PROJECTHOME}/lavoisier/lavoisier-interfaces/src/main/resources
+[INFO] [compiler:compile {execution: default-compile}]
+[INFO] Compiling 8 source files to {PROJECTHOME}/lavoisier/lavoisier-interfaces/target/classes
+[INFO] [resources:testResources {execution: default-testResources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory {PROJECTHOME}/lavoisier/lavoisier-interfaces/src/test/resources
+[INFO] [compiler:testCompile {execution: default-testCompile}]
+[INFO] Compiling 1 source file to {PROJECTHOME}/lavoisier/lavoisier-interfaces/target/test-classes
+[INFO] [surefire:test {execution: default-test}]
+[INFO] Tests are skipped.
+[INFO] [jar:jar {execution: default-jar}]
+[INFO] Building jar: {PROJECTHOME}/lavoisier/lavoisier-interfaces/target/lavoisier-interfaces-0.0.1-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Building lavoisier-brain
+[INFO]    task-segment: [clean, package]
+[INFO] ------------------------------------------------------------------------
+[INFO] [clean:clean {execution: default-clean}]
+[INFO] Deleting directory {PROJECTHOME}/lavoisier/lavoisier-brain/target
+[INFO] [resources:resources {execution: default-resources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] [compiler:compile {execution: default-compile}]
+[INFO] Compiling 1 source file to {PROJECTHOME}/lavoisier/lavoisier-brain/target/classes
+[INFO] [resources:testResources {execution: default-testResources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] [compiler:testCompile {execution: default-testCompile}]
+[INFO] Compiling 3 source files to {PROJECTHOME}/lavoisier/lavoisier-brain/target/test-classes
+[INFO] [surefire:test {execution: default-test}]
+[INFO] Tests are skipped.
+[INFO] [jar:jar {execution: default-jar}]
+[INFO] Building jar: {PROJECTHOME}/lavoisier/lavoisier-brain/target/lavoisier-brain-0.0.1-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Building lavoisier-opentox
+[INFO]    task-segment: [clean, package]
+[INFO] ------------------------------------------------------------------------
+[INFO] [clean:clean {execution: default-clean}]
+[INFO] Deleting directory {PROJECTHOME}/lavoisier/lavoisier-opentox/target
+[INFO] [resources:resources {execution: default-resources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory {PROJECTHOME}/lavoisier/lavoisier-opentox/src/main/resources
+[INFO] [compiler:compile {execution: default-compile}]
+[INFO] Compiling 1 source file to {PROJECTHOME}/lavoisier/lavoisier-opentox/target/classes
+[INFO] [resources:testResources {execution: default-testResources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory {PROJECTHOME}/lavoisier/lavoisier-opentox/src/test/resources
+[INFO] [compiler:testCompile {execution: default-testCompile}]
+[INFO] Compiling 3 source files to {PROJECTHOME}/lavoisier/lavoisier-opentox/target/test-classes
+[INFO] [surefire:test {execution: default-test}]
+[INFO] Tests are skipped.
+[INFO] [jar:jar {execution: default-jar}]
+[INFO] Building jar: {PROJECTHOME}/lavoisier/lavoisier-opentox/target/lavoisier-opentox-0.0.1-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Building lavoisier-ambit
+[INFO]    task-segment: [clean, package]
+[INFO] ------------------------------------------------------------------------
+[INFO] [clean:clean {execution: default-clean}]
+[INFO] Deleting directory {PROJECTHOME}/lavoisier/lavoisier-ambit/target
+[INFO] [resources:resources {execution: default-resources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] [compiler:compile {execution: default-compile}]
+[INFO] Compiling 1 source file to {PROJECTHOME}/lavoisier/lavoisier-ambit/target/classes
+[INFO] [resources:testResources {execution: default-testResources}]
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] [compiler:testCompile {execution: default-testCompile}]
+[INFO] Compiling 3 source files to {PROJECTHOME}/lavoisier/lavoisier-ambit/target/test-classes
+[INFO] [surefire:test {execution: default-test}]
+[INFO] Tests are skipped.
+[INFO] [jar:jar {execution: default-jar}]
+[INFO] Building jar: {PROJECTHOME}/lavoisier/lavoisier-ambit/target/lavoisier-ambit-0.0.1-SNAPSHOT.jar
+[INFO]
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] ------------------------------------------------------------------------
+[INFO] Lavoisier ............................................. SUCCESS [1.776s]
+[INFO] lavoisier-interfaces .................................. SUCCESS [3.177s]
+[INFO] lavoisier-brain ....................................... SUCCESS [1.632s]
+[INFO] lavoisier-opentox ..................................... SUCCESS [0.885s]
+[INFO] lavoisier-ambit ....................................... SUCCESS [0.910s]
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8 seconds
+[INFO] Finished at: Sun Aug 21 11:45:25 EEST 2011
+[INFO] Final Memory: 43M/347M
+[INFO] ------------------------------------------------------------------------
+
+To install in the local repository  (will build jars and copy into {HOME}/.m2/repository ):  
+
+$mvn clean install -DskipTests
+
+To run tests:
+
+$mvn test
+
+To generate web site (default content and reports, based on pom.xml, including JavaDoc with class diagrams).
+The web pages will be in the lavoisier/target/staging directory.
+
+$mvn site:stage
+
+
+To build source distribution  http://maven.apache.org/plugins/maven-source-plugin/
+
+$mvn source:aggregate
+
+Eclipse
+
+Maven integration for Eclipse should be installed http://eclipse.org/m2e/ .
+Import as existing Maven project :  menu File/Import/Maven/Existing Maven Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

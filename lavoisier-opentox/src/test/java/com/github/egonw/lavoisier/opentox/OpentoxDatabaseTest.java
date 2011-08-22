@@ -18,7 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.egonw.lavoisier.ambit;
+package com.github.egonw.lavoisier.opentox;
 
 import org.junit.Assert;
 import org.junit.Test;
